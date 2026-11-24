@@ -2,7 +2,6 @@
 # powerbi-portfolio
 # Job hopping vs. Loyalty
 
-Ein Satz: Was zeigt das Dashboard und für wen ist es?
 <img width="326" height="239" alt="dashboard_uebersicht" src="https://github.com/user-attachments/assets/ece4afc5-9482-4463-8460-8c23eac9e74c" />
 
 ![Dashboard-Übersicht](images/dashboard-uebersicht.png)
