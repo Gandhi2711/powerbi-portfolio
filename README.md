@@ -8,10 +8,10 @@ Ein Satz: Was zeigt das Dashboard und für wen ist es?
 ![Dashboard-Übersicht](images/dashboard-uebersicht.png)
 
 ## Fragestellung / Ziel
-Welches Problem löst das Dashboard?
+26.000 synthetische Karriereverläufe, kalibriert anhand von ADP- / Atlanta-Fed-Daten zum Vergleich zwischen Jobwechslern und Bleibern (Switcher vs. Stayer).
 
 ## Datenquelle
-(https://www.kaggle.com/datasets/sergionefedov/job-hopping-vs-loyalty-staying-loyal-pays-you, Lizenz, Zeitraum)
+(https://www.kaggle.com/datasets/sergionefedov/job-hopping-vs-loyalty-staying-loyal-pays-you)
 
 ## Vorgehen
 - Datenaufbereitung (Power Query) - Umwandlung Dezimalzahl 1.89 in amerikanisches Gebietsschema
