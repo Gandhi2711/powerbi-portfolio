@@ -3,7 +3,7 @@
 
 Ein Satz: Was zeigt das Dashboard und für wen ist es?
 
-![Dashboard-Übersicht](images/dashboard-uebersicht.png)
+![Dashboard-Übersicht](images/power_bi_test.png)
 
 ## Fragestellung / Ziel
 Welches Problem löst das Dashboard?
