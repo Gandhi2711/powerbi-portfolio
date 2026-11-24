@@ -1,0 +1,159 @@
+table job_hopping_vs_loyalty
+	lineageTag: 636a9b56-b1ad-42ee-bfd3-aa28a40f2788
+
+	column person_id
+		dataType: string
+		lineageTag: 80009dfd-0c55-4391-a3ba-93d9148f7b30
+		summarizeBy: none
+		sourceColumn: person_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column field
+		dataType: string
+		lineageTag: 0ca7e07f-452c-4d78-ab57-f8625e88d648
+		summarizeBy: none
+		sourceColumn: field
+
+		annotation SummarizationSetBy = Automatic
+
+	column education
+		dataType: string
+		lineageTag: 599a0116-c603-415f-82ba-c6ee15df9887
+		summarizeBy: none
+		sourceColumn: education
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_in_workforce
+		dataType: string
+		lineageTag: 6e39cbdd-b14e-4f58-b851-3d0e61edd043
+		summarizeBy: none
+		sourceColumn: years_in_workforce
+
+		annotation SummarizationSetBy = Automatic
+
+	column starting_salary_usd
+		dataType: string
+		lineageTag: 0d57853e-a8d8-4280-af26-81dfaa46eae6
+		summarizeBy: none
+		sourceColumn: starting_salary_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_jobs
+		dataType: string
+		lineageTag: b18245cc-ba1f-41c0-acde-d99bbce47903
+		summarizeBy: none
+		sourceColumn: num_jobs
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_switches
+		dataType: string
+		lineageTag: 3f67b3c7-bdc8-49e8-a7c0-4432c84f7a51
+		summarizeBy: none
+		sourceColumn: num_switches
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_tenure_years
+		dataType: double
+		lineageTag: ec4dcc04-e8ff-4b62-a487-c7b18ebf2484
+		summarizeBy: sum
+		sourceColumn: avg_tenure_years
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longest_tenure_years
+		dataType: double
+		lineageTag: 397e5d28-5487-4b8c-845b-68ac76d6a6c7
+		summarizeBy: sum
+		sourceColumn: longest_tenure_years
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column switching_style
+		dataType: string
+		lineageTag: 29c519e5-dcca-4693-813c-35523edb48c5
+		summarizeBy: none
+		sourceColumn: switching_style
+
+		annotation SummarizationSetBy = Automatic
+
+	column pct_external_moves
+		dataType: double
+		lineageTag: 301d07c2-0907-4a51-be46-ad24a9dd3d56
+		summarizeBy: sum
+		sourceColumn: pct_external_moves
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_salary_usd
+		dataType: string
+		lineageTag: 1e2c749b-34af-4970-a2e8-33fabe3c3c44
+		summarizeBy: none
+		sourceColumn: current_salary_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column career_cagr_pct
+		dataType: string
+		lineageTag: 1d1b3142-a9dc-46f8-b381-3e64ced7cee8
+		summarizeBy: none
+		sourceColumn: career_cagr_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_growth_pct
+		dataType: string
+		lineageTag: ea4923a2-4396-4bcf-9e2b-c2151816e837
+		summarizeBy: none
+		sourceColumn: total_growth_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary_vs_stayer_ratio
+		dataType: string
+		lineageTag: a643f836-eb25-41e4-b69c-d8e30111be58
+		summarizeBy: none
+		sourceColumn: salary_vs_stayer_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column high_growth
+		dataType: string
+		lineageTag: aabac46b-2d79-4e09-8fad-d584b03b96af
+		summarizeBy: none
+		sourceColumn: high_growth
+
+		annotation SummarizationSetBy = Automatic
+
+	column out_earns_stayer
+		dataType: string
+		lineageTag: 0e0ba6d9-cef5-49ba-857e-7bbfc62bbcd3
+		summarizeBy: none
+		sourceColumn: out_earns_stayer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition job_hopping_vs_loyalty = m
+		mode: import
+		source =
+				let
+				    Quelle = Csv.Document(File.Contents("C:\Users\Lenovo\Documents\0006 Beruf\001 Weiterbildung\08-Portfolioprojekt\Notebooks\job_hopping_vs_loyalty.csv"),[Delimiter=",", Columns=17, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Höher gestufte Header" = Table.PromoteHeaders(Quelle, [PromoteAllScalars=true]),
+				    #"Geänderter Typ mit Gebietsschema" = Table.TransformColumnTypes(#"Höher gestufte Header", {{"avg_tenure_years", type number}, {"longest_tenure_years", type number}, {"pct_external_moves", type number}}, "en-US")
+				in
+				    #"Geänderter Typ mit Gebietsschema"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

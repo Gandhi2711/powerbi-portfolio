@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Loyalty"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "aefadd87-770c-4b4a-8448-c1ca00a21485"
+  }
+}

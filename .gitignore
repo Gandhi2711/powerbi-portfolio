@@ -424,3 +424,8 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Lokaler Daten-Cache (groß, enthält importierte Daten)
+**/.pbi/cache.abf
+# Nutzerspezifische Einstellungen
+**/.pbi/localSettings.json

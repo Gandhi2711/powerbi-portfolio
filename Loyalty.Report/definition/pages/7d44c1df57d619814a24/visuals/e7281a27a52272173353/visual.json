@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "e7281a27a52272173353",
+  "position": {
+    "x": 11.338669865510161,
+    "y": 334.49076103254976,
+    "z": 0,
+    "height": 745.51754365729312,
+    "width": 1142.3709889501488,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "job_hopping_vs_loyalty"
+                    }
+                  },
+                  "Property": "education"
+                }
+              },
+              "queryRef": "job_hopping_vs_loyalty.education",
+              "nativeQueryRef": "education",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_hopping_vs_loyalty"
+                        }
+                      },
+                      "Property": "current_salary_usd"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(job_hopping_vs_loyalty.current_salary_usd)",
+              "nativeQueryRef": "Anzahl von current_salary_usd"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "job_hopping_vs_loyalty"
+                      }
+                    },
+                    "Property": "current_salary_usd"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "375160464d88634ffeea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "job_hopping_vs_loyalty"
+              }
+            },
+            "Property": "education"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b6126f59e7429fd6a2fd",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "job_hopping_vs_loyalty"
+                  }
+                },
+                "Property": "current_salary_usd"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
